@@ -10,10 +10,10 @@ export const VideoCardContainer = styled.a`
   height: 197px;
   width: 298px;
   margin-right: 16px;
-  transition: 298px;
+  transition: .5s;
 
   &:hover,
   &:focus{
-    opacity: .5s
+    transform: scale(1.2);
   }
 `;

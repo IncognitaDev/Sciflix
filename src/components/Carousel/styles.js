@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const VideoCardGroupContainer = styled.section`
   color: var(--white);
@@ -16,8 +16,8 @@ export const Title = styled.h3`
   margin-bottom: 16px;
   border-radius: 4px;
 
-  @media(max-width: 800px){
-    font-size:16px;
+  @media (max-width: 800px) {
+    font-size: 16px;
     padding: 10px;
   }
 `;
@@ -25,25 +25,24 @@ export const Title = styled.h3`
 export const ExtraLink = styled.a`
   margin-left: 16px;
   text-decoration: none;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 
   &:hover,
   &:focus {
-    opacity: .5;
+    opacity: 0.5;
   }
 
-  @media(max-width: 800px){
+  @media (max-width: 800px) {
     display: block;
     margin-bottom: 16px;
     margin-left: 0;
-  };
+  }
 `;
 
 export const VideoCardList = styled.ul`
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-    display: flex;
-    overflow-x: hidden;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  overflow-x: auto;
 `;
-
