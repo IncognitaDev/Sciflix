@@ -1,21 +1,21 @@
-import React from './node_modules/react'
-import Logo from '../../assets'
+import React from "react";
+import Logo from "../../assets/Logo.png";
 
-import './Header.css'
-import Button from '../Button'
+import Button from "../Button";
+import { MenuWrapper, LogoImage } from "./styles.js";
 
 function Header() {
   return (
-    <nav className='Header'>
-      <a href='/'>
-        <img className='Logo' src={Logo} alt='SciFlix Logo'/>
+    <MenuWrapper>
+      <a href="/">
+        <LogoImage className="Logo" src={Logo} alt="SciFlix Logo" />
       </a>
 
-      <Button as='a' className='ButtonLink' href='/'>
+      <Button as="a" className="ButtonLink" href="/">
         Novo Video
       </Button>
-    </nav>
-  )
+    </MenuWrapper>
+  );
 }
 
-export default Header 
+export default Header;

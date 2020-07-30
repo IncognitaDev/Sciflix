@@ -19,6 +19,7 @@ const Button = styled.button`
     left: 0;
     bottom: 0;
     right: 0;
+    outline: none;
     background-color: var(--primary);
     color: var(--white);
     text-align: center;
