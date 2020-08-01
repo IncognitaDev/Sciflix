@@ -13,12 +13,12 @@ function CadastroCategoria() {
     cor: '#000',
   };
   const [values, setValues] = useState({ valoresIniciais });
-  const URL = location.hostname.includes('localhost') 
+  const URL = window.location.hostname.includes('localhost') 
     ? 'https://localhost:3333/categorias' 
     : 'https://sci-flix.herokuapp.com/categorias'
 
   useEffect(() =>{
-    fetch('https://localhost:3333/categorias').then(async response => {
+    fetch(URL).then(async response => {
       const resposta = await response.json()
       setCategorias([resposta])
     })
