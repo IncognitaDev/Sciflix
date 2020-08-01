@@ -14,15 +14,15 @@ function CadastroCategoria() {
   };
   const [values, setValues] = useState({ valoresIniciais });
   const URL = window.location.hostname.includes('localhost') 
-    ? 'https://localhost:3333/categorias' 
+    ? 'http://localhost:3333/categorias' 
     : 'https://sci-flix.herokuapp.com/categorias'
 
   useEffect(() =>{
     fetch(URL).then(async response => {
       const resposta = await response.json()
-      setCategorias([resposta])
+      setCategorias([...resposta])
     })
-  }, [])
+  },[])
 
   function handleChange(key, value) {
     setValues({
@@ -68,8 +68,8 @@ function CadastroCategoria() {
       </form>
 
       <ul>
-        {categorias.map((categoria) => (
-          <li key={`${categoria.nome}`}>{categoria.nome}</li>
+        {categorias.map(categoria => (
+          <li key={categoria.id}>{categoria.nome}</li>
         ))}
       </ul>
 
