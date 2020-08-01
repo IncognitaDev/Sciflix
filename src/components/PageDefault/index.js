@@ -23,12 +23,9 @@ function PageDefault({ children }) {
     </>
   );
 }
-PageDefault.defaultProps = {
-  children: '',
-};
 
 PageDefault.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.array.isRequired ,
 };
 
 export default PageDefault;

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
-import SubmitButton from  './styles'
-
+import { SubmitButton , ClearButton } from  '../../../components/Button'
 
 function CadastroCategoria() {
   const [categorias, setCategorias] = useState([]);
@@ -13,6 +13,13 @@ function CadastroCategoria() {
     cor: '#000',
   };
   const [values, setValues] = useState({ valoresIniciais });
+
+  useEffect(() =>{
+    fetch('https://localhost:3333/categorias').then(async response => {
+      const resposta = await response.json()
+      setCategorias([resposta])
+    })
+  }, [])
 
   function handleChange(key, value) {
     setValues({
@@ -33,24 +40,28 @@ function CadastroCategoria() {
 
       <form onSubmit={(e) => handleSubmit(e)}>
         <FormField
-          value={values.name}
+          value={values.nome}
+          label='Nome da Categoria'
           name="nome"
           type="text"
-          onChange={(e) => handleChange(e.target.name, e.target.value)}
+          onChange={(e) => handleChange('nome', e.target.value)}
         />
         <FormField
-          value={values.description}
+          value={values.descricao}
+          label='descricao'
           name="descricao"
-          type="textArea"
-          onChange={(e) => handleChange(e.target.name, e.target.value)}
+          type='textarea'
+          onChange={(e) => handleChange('descricao', e.target.value)}
         />
         <FormField
           value={values.cor}
+          label='cor'
           name="cor"
           type="color"
-          onChange={(e) => handleChange(e.target.name, e.target.value)}
+          onChange={(e) => handleChange('cor', e.target.value)}
         />
-        <SubmitButton type="submit">Cadastrar</SubmitButton>
+        <SubmitButton type="submit">Enviar</SubmitButton>
+        <ClearButton>Limpar</ClearButton>
       </form>
 
       <ul>

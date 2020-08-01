@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
+import Button from '../../../components/Button'
 
 function CadastroVideo() {
   const [videos, setVideos] = useState([]);
@@ -27,31 +28,31 @@ function CadastroVideo() {
 
   return (
     <PageDefault>
-      <h1>
-        Cadastro de Video:
-        {values.nome}
-      </h1>
+      <h1>Cadastro de Categoria: {values.nome}</h1>
 
       <form onSubmit={(e) => handleSubmit(e)}>
         <FormField
-          value={values.url}
-          name="Url"
+          value={values.nome}
+          label='Nome da Categoria'
+          name="nome"
           type="text"
-          onChange={(e) => handleChange(e.target.name, e.target.value)}
+          onChange={(e) => handleChange('nome', e.target.value)}
         />
         <FormField
-          value={values.description}
+          value={values.descricao}
+          label='descricao'
           name="descricao"
-          type="textArea"
-          onChange={(e) => handleChange(e.target.name, e.target.value)}
+          type='textarea'
+          onChange={(e) => handleChange('descricao', e.target.value)}
         />
         <FormField
           value={values.cor}
+          label='cor'
           name="cor"
           type="color"
-          onChange={(e) => handleChange(e.target.name, e.target.value)}
+          onChange={(e) => handleChange('cor', e.target.value)}
         />
-        <button type="submit">Cadastrar</button>
+        <Button type="submit">Cadastrar</Button>
       </form>
 
       <ul>
