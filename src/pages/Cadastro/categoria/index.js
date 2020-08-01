@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
+import SubmitButton from  './styles'
+
 
 function CadastroCategoria() {
   const [categorias, setCategorias] = useState([]);
@@ -48,7 +50,7 @@ function CadastroCategoria() {
           type="color"
           onChange={(e) => handleChange(e.target.name, e.target.value)}
         />
-        <button type="submit">Cadastrar</button>
+        <SubmitButton type="submit">Cadastrar</SubmitButton>
       </form>
 
       <ul>

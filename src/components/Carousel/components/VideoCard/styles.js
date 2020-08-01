@@ -16,4 +16,12 @@ export const VideoCardContainer = styled.a`
   &:focus{
     transform: scale(1.2);
   }
+
+  &::after {
+    content: attr(title) ;
+    display: inline-block;
+    margin-top: 120px;
+    margin-left: 30px;
+    font-weight: bold;
+  }
 `;
