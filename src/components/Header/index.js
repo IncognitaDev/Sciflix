@@ -1,9 +1,9 @@
-import React from "react";
-import {Link} from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Logo from "../../assets/Logo.png";
-import Button from "../Button";
-import { MenuWrapper, LogoImage } from "./styles.js";
+import Logo from '../../assets/Logo.png';
+import Button from '../Button';
+import { MenuWrapper, LogoImage } from './styles';
 
 function Header() {
   return (

@@ -12,7 +12,7 @@ export const LogoImage = styled.img`
 export const MenuWrapper = styled.nav`
   z-index: 51;
   width: 100vw;
-  height: 94px;
+  height: 80px;
 
   position: fixed;
   top: 0;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
-import Button from '../../../components/Button'
+import { SubmitButton , ClearButton } from '../../../components/Button'
 
 function CadastroVideo() {
   const [videos, setVideos] = useState([]);
@@ -28,7 +28,7 @@ function CadastroVideo() {
 
   return (
     <PageDefault>
-      <h1>Cadastro de Categoria: {values.nome}</h1>
+      <h1>Cadastro de Video: {values.nome}</h1>
 
       <form onSubmit={(e) => handleSubmit(e)}>
         <FormField
@@ -52,7 +52,8 @@ function CadastroVideo() {
           type="color"
           onChange={(e) => handleChange('cor', e.target.value)}
         />
-        <Button type="submit">Cadastrar</Button>
+        <SubmitButton type="submit">Enviar</SubmitButton>
+        <ClearButton>Limpar</ClearButton>
       </form>
 
       <ul>
@@ -61,7 +62,7 @@ function CadastroVideo() {
         ))}
       </ul>
 
-      <Link to="/cadastro/video">Cadastrar Video</Link>
+      <Link to="/cadastro/categoria">Cadastrar Categoria</Link>
     </PageDefault>
   );
 }

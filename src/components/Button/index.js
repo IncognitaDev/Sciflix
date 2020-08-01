@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Button = styled.button`
-    color: var(--white);
+  color: var(--white);
   border: 1px solid var(--white);
   padding: 16px 24px;
   font-size: 16px;
@@ -28,5 +28,20 @@ const Button = styled.button`
   }
   
 `;
+
+export const SubmitButton = styled(Button)`
+  background-color: var(--primary);
+  margin-right: 20px;
+  border: 0;
+
+  @media (max-width: 800px){
+    position: relative ;
+  }
+`
+
+export const ClearButton = styled(Button)`
+  background-color: var(--grayMedium);
+  color: black;
+`
 
 export default Button;
