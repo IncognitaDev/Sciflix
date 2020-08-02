@@ -2,20 +2,20 @@
   "categorias": [
     {
       "id": 1,
-      "titulo": "Front End",
+      "titulo": "Física",
       "cor": "#6BD1FF",
       "link_extra": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
+        "text": "Curso de física básica do Ciência Todo Dia",
+        "url": "https://www.youtube.com/playlist?list=PLPz6TqSYQzDYuQ3WqF5plmN0rycwcYULm"
       }
     },
     {
       "id": 2,
-      "titulo": "Back End",
+      "titulo": "Biologia",
       "cor": "#00C86F",
       "link_extra": {
-        "text": "Cursos de Back End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-programacao"
+        "text": "Nerdologia Ensina (A Origem da Vida)",
+        "url": "https://www.youtube.com/playlist?list=PLyRcl7Q37-DW0ioumNs68kf6-7FYg1UXW"
       }
     },
     {
@@ -46,166 +46,272 @@
     {
       "id": 1,
       "categoriaId": 1,
-      "titulo": "SEO com React",
-      "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+      "titulo": "O Que É Energia?",
+      "url": "https://www.youtube.com/watch?v=3VLPyOLC1nc"
     },
     {
       "id": 2,
       "categoriaId": 1,
-      "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-      "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+      "titulo": "A Teoria do Movimento",
+      "url": "https://www.youtube.com/watch?v=X6mQcBdFkXQ"
     },
     {
       "id": 3,
       "categoriaId": 1,
-      "titulo": "Componentização com VanillaJS #AluraMais",
-      "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
+      "titulo": "Quantidade de Movimento Explicada (Momento)",
+      "url": "https://www.youtube.com/watch?v=Seb29XUjakk"
     },
     {
       "id": 4,
       "categoriaId": 1,
-      "titulo": "Pare de chutar e aprenda a display: inline #01",
-      "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
+      "titulo": "A Primeira Lei de Newton (Lei da Inércia) Explicada ",
+      "url": "https://www.youtube.com/watch?v=RoyecFxgwTs"
     },
     {
       "id": 5,
       "categoriaId": 1,
-      "titulo": "Template String: Interpolando strings com JavaScript #AluraMais",
-      "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
+      "titulo": "A Segunda Lei de Newton Explicada",
+      "url": "https://www.youtube.com/watch?v=gS1FnfzG-lg"
     },
     {
       "id": 6,
       "categoriaId": 1,
-      "titulo": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
-      "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
+      "titulo": "A Terceira Lei de Newton Explicada",
+      "url": "https://www.youtube.com/watch?v=Ei6DcLyNuyI"
     },
     {
       "id": 7,
       "categoriaId": 1,
-      "titulo": "Novidades do Angular v9",
-      "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
+      "titulo": "IMPULSO",
+      "url": "https://www.youtube.com/watch?v=b0lk_OAGgQw"
     },
     {
       "id": 8,
-      "categoriaId": 2,
-      "titulo": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
-      "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
+      "categoriaId": 1,
+      "titulo": "O TEOREMA DO TRABALHO-ENERGIA ",
+      "url": "https://www.youtube.com/watch?v=h0W5Z4tTqjc"
     },
     {
       "id": 9,
-      "categoriaId": 2,
-      "titulo": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
-      "url": "https://www.youtube.com/watch?v=6o6-bKOZOEY"
+      "categoriaId": 1,
+      "titulo": "A História COMPLETA da GRAVITAÇÃO UNIVERSAL",
+      "url": "https://www.youtube.com/watch?v=4OLOOs-uMhM"
     },
     {
       "id": 10,
-      "categoriaId": 2,
-      "titulo": "Programei 4 robôs que criam vídeos para mim no YouTube",
-      "url": "https://www.youtube.com/watch?v=kjhu1LEmRpY"
+      "categoriaId": 1,
+      "titulo": "Os Três Estados da Matéria",
+      "url": "https://www.youtube.com/watch?v=qsjUpTKB73A"
     },
     {
       "id": 11,
-      "categoriaId": 2,
-      "titulo": "API: Dicionário do Programador",
-      "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
+      "categoriaId": 1,
+      "titulo": "DENSIDADE, PRESSÃO e o PRINCÍPIO DE PASCAL",
+      "url": "https://www.youtube.com/watch?v=5cmtwJcTXzw"
     },
     {
       "id": 12,
-      "categoriaId": 2,
-      "titulo": "Usando Git Direito",
-      "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
+      "categoriaId": 1,
+      "titulo": "Empuxo e o Princípio de Arquimedes",
+      "url": "https://www.youtube.com/watch?v=57qs91GBscU"
     },
     {
       "id": 13,
+      "categoriaId": 1,
+      "titulo": "A Lei ZERO da Termodinâmica",
+      "url": "https://www.youtube.com/watch?v=8fo8_m-qP9M"
+    },
+    {
+      "id": 14,
+      "categoriaId": 1,
+      "titulo": "A Primeira Lei da Termodinâmica Explicada",
+      "url": "https://www.youtube.com/watch?v=U_2AJc1mcas"
+    },
+    {
+      "id": 15,
+      "categoriaId": 1,
+      "titulo": "A ENTROPIA EXPLICADA",
+      "url": "https://www.youtube.com/watch?v=qjHfkfIs1Ug"
+    },
+    {
+      "id": 16,
+      "categoriaId": 1,
+      "titulo": "Lei dos Gases Ideais e o Ciclo de Carnot",
+      "url": "https://www.youtube.com/watch?v=q75HFKTzWJA"
+    },
+    {
+      "id": 17,
+      "categoriaId": 1,
+      "titulo": "O que é uma Onda?",
+      "url": "https://www.youtube.com/watch?v=M2D5-zXlD6A"
+    },
+    {
+      "id": 18,
+      "categoriaId": 1,
+      "titulo": "Como o Som Funciona?",
+      "url": "https://www.youtube.com/watch?v=WLM6-By0qBg"
+    },
+    {
+      "id": 19,
+      "categoriaId": 1,
+      "titulo": "O Efeito Doppler Explicado",
+      "url": "https://www.youtube.com/watch?v=78WkQObqp3U"
+    },
+    {
+      "id": 20,
+      "categoriaId": 1,
+      "titulo": "Do que a luz é feita?",
+      "url": "https://www.youtube.com/watch?v=7K04QZQ1jsU"
+    },
+    {
+      "id": 21,
+      "categoriaId": 1,
+      "titulo": "A Lei de Snell Explicada (Como a Refração Funciona?)",
+      "url": "https://www.youtube.com/watch?v=EaTG8HCcKwU"
+    },
+    {
+      "id": 22,
+      "categoriaId": 2,
+      "titulo": "Nerdologia Ensina | Evolução ",
+      "url": "https://www.youtube.com/watch?v=rXe916DMpLo"
+    },
+    {
+      "id": 23,
+      "categoriaId": 2,
+      "titulo": "Origem da Vida | Nerdologia Ensina 01!",
+      "url": "https://www.youtube.com/watch?v=ugAuIP23IPQ"
+    },
+    {
+      "id": 24,
+      "categoriaId": 2,
+      "titulo": "Uma explosão de energia (mitocôndrias) | Nerdologia Ensina 02",
+      "url": "https://www.youtube.com/watch?v=dng9KJr41JY"
+    },
+    {
+      "id": 25,
+      "categoriaId": 2,
+      "titulo": "Como surgiram as plantas (fotossíntese) | Nerdologia Ensina 03",
+      "url": "https://www.youtube.com/watch?v=b9sfQZrK8jQ"
+    },
+    {
+      "id": 26,
+      "categoriaId": 2,
+      "titulo": "De onde vêm as células (eucariotos) | Nerdologia Ensina 04",
+      "url": "https://www.youtube.com/watch?v=vSpsk4F3muU"
+    },
+    {
+      "id": 27,
       "categoriaId": 3,
       "titulo": "Teste de Turing",
       "url": "https://www.youtube.com/watch?v=BaPGU4JWa34"
     },
     {
-      "id": 14,
+      "id": 28,
       "categoriaId": 3,
       "titulo": "O que é Data Science?",
       "url": "https://www.youtube.com/watch?v=5b9Z8toVaAU&t=9s"
     },
     {
-      "id": 15,
-      "categoriaId": 3,
-      "titulo": "Melhor forma de aprender Python",
-      "url": "https://www.youtube.com/watch?v=Gojqw9BQ5qY"
+      "id": 29,
+      "categoriaId": 2,
+      "titulo": "Como surgiu o sexo | Nerdologia Ensina 05",
+      "url": "https://www.youtube.com/watch?v=KRdFCVUkM9s"
     },
     {
-      "id": 16,
-      "categoriaId": 3,
-      "titulo": "Como ingressar no mercado de Data Science?",
-      "url": "https://www.youtube.com/watch?v=gxyjGmOV540"
+      "id": 30,
+      "categoriaId": 2,
+      "titulo": "A complexidade da vida (multicelularidade) | Nerdologia Ensina 06",
+      "url": "https://www.youtube.com/watch?v=asALU93VqGY"
     },
     {
-      "id": 17,
+      "id": 31,
+      "categoriaId": 2,
+      "titulo": "De onde vêm os fósseis | Nerdologia Ensina 07",
+      "url": "https://www.youtube.com/watch?v=WUPECN3YPz0"
+    },
+    {
+      "id": 32,
+      "categoriaId": 2,
+      "titulo": "A evolução ainda acontece | Nerdologia Ensina 08",
+      "url": "https://www.youtube.com/watch?v=vwyHgAznE6E"
+    },
+    {
+      "id": 33,
+      "categoriaId": 2,
+      "titulo": "Cooperação e trapaças | Nerdologia Ensina 09",
+      "url": "https://www.youtube.com/watch?v=9Xp7OzeDpcw"
+    },
+    {
+      "id": 34,
+      "categoriaId": 2,
+      "titulo": "Domesticação dos animais e plantas | Nerdologia Ensina 10",
+      "url": "https://www.youtube.com/watch?v=5pO6FFV-NoE"
+    },
+    {
+      "id": 35,
+      "categoriaId": 2,
+      "titulo": "A inteligência humana é única? | Nerdologia Ensina 11",
+      "url": "https://www.youtube.com/watch?v=UcruZQGEbyw"
+    },
+    {
+      "id": 36,
+      "categoriaId": 2,
+      "titulo": "Evolução humana | Nerdologia Ensina 12 ",
+      "url": "https://www.youtube.com/watch?v=Comf5vc56zc"
+    },
+    {
+      "id": 37,
+      "categoriaId": 2,
+      "titulo": "O futuro da evolução: para onde vamos | Nerdologia Ensina 13",
+      "url": "https://www.youtube.com/watch?v=S8TUZ7gsSm4"
+    },
+    {
+      "id": 38,
       "categoriaId": 4,
       "titulo": "Interestellar",
       "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
     },
     {
-      "id": 18,
+      "id": 39,
       "categoriaId": 4,
       "titulo": "Gattaca",
       "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
     },
     {
-      "id": 19,
+      "id": 40,
       "categoriaId": 4,
       "titulo": "A Chegada",
       "url": "https://www.youtube.com/watch?v=rNciXGzYZms"
     },
     {
-      "id": 20,
+      "id": 41,
       "categoriaId": 4,
       "titulo": "Feitiço do Tempo",
       "url": "https://www.youtube.com/watch?v=zi8d69P9NvI"
     },
     {
-      "id": 21,
+      "id": 42,
       "categoriaId": 5,
       "titulo": "Final Fantasy 7",
       "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
     },
     {
-      "id": 22,
+      "id": 43,
       "categoriaId": 5,
       "titulo": "Assassins Creed Valhalla",
       "url": "https://www.youtube.com/watch?v=KDfdjB9uL0U"
     },
     {
-      "id": 23,
+      "id": 44,
       "categoriaId": 5,
       "titulo": "God of War 4",
       "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
     },
     {
-      "id": 24,
+      "id": 45,
       "categoriaId": 5,
       "titulo": "Resident Evil 8",
       "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
-    },
-    {
-      "titulo": "seila",
-      "url": "https://www.youtube.com/watch?v=-nYNd6EuZHU&feature=youtu.be",
-      "categoriaId": {
-        "id": 1,
-        "titulo": "Front End",
-        "cor": "#6BD1FF",
-        "link_extra": {
-          "text": "Formação de Front End na Alura",
-          "url": "https://www.alura.com.br/cursos-online-front-end"
-        }
-      },
-      "id": 25
-    },
-    {
-      "titulo": "seila",
-      "url": "https://www.youtube.com/watch?v=-nYNd6EuZHU&feature=youtu.be",
-      "categoriaId": 1,
-      "id": 26
     }
   ]
 }
