@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Header from '../Header';
@@ -13,20 +13,25 @@ const Main = styled.main`
   padding-bottom: 5%;
   padding-left: 5%;
   padding-right: 5%;
+
+  ${({ paddingAll }) =>
+    css`
+      padding: ${paddingAll};
+    `}
 `;
 
-function PageDefault({ children }) {
+function PageDefault({ children, paddingAll }) {
   return (
     <>
       <Header />
-      <Main>{children}</Main>
+      <Main paddingAll={paddingAll}>{children}</Main>
       <Footer />
     </>
   );
 }
 
 PageDefault.propTypes = {
-  children: PropTypes.array.isRequired ,
+  children: PropTypes.node.isRequired,
 };
 
 export default PageDefault;

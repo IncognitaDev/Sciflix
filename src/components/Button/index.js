@@ -39,8 +39,8 @@ export const SubmitButton = styled(Button)`
   }
 `
 
-export const ClearButton = styled(Button)`
-  background-color: var(--grayMedium);
+export const ClearButton = styled(SubmitButton)`
+  background-color: var(--blackLighter);
   color: black;
 `
 

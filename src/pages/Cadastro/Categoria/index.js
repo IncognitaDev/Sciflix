@@ -1,41 +1,29 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
-import { SubmitButton , ClearButton } from  '../../../components/Button'
+import { SubmitButton, ClearButton } from '../../../components/Button';
+import useForm from '../../../hooks/useForm'
+import categoriasRepositories from '../../../repositories/categorias'
 
 function CadastroCategoria() {
   const [categorias, setCategorias] = useState([]);
-  const valoresIniciais = {
+
+  useEffect(() => {
+    categoriasRepositories.getAll().then((response) => {
+      setCategorias([...response]);
+    });
+  }, []);
+
+  const { handleChange, handleSubmit, clearForm, values } = useForm({
     nome: '',
     descricao: '',
     cor: '#000',
-  };
-  const [values, setValues] = useState({ valoresIniciais });
-  const URL = window.location.hostname.includes('localhost') 
-    ? 'http://localhost:3333/categorias' 
-    : 'https://sci-flix.herokuapp.com/categorias'
-
-  useEffect(() =>{
-    fetch(URL).then(async response => {
-      const resposta = await response.json()
-      setCategorias([...resposta])
-    })
-  },[])
-
-  function handleChange(key, value) {
-    setValues({
-      ...values,
-      [key]: value,
-    });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    setCategorias([...categorias, values]);
-  }
+  },
+    setCategorias,
+    categorias
+  );
 
   return (
     <PageDefault>
@@ -44,32 +32,32 @@ function CadastroCategoria() {
       <form onSubmit={(e) => handleSubmit(e)}>
         <FormField
           value={values.nome}
-          label='Nome da Categoria'
+          label="Nome da Categoria"
           name="nome"
           type="text"
           onChange={(e) => handleChange('nome', e.target.value)}
         />
         <FormField
           value={values.descricao}
-          label='descricao'
+          label="descricao"
           name="descricao"
-          type='textarea'
+          type="textarea"
           onChange={(e) => handleChange('descricao', e.target.value)}
         />
         <FormField
           value={values.cor}
-          label='cor'
+          label="cor"
           name="cor"
           type="color"
           onChange={(e) => handleChange('cor', e.target.value)}
         />
         <SubmitButton type="submit">Enviar</SubmitButton>
-        <ClearButton>Limpar</ClearButton>
+        <ClearButton onClick={() => clearForm()}>Limpar</ClearButton>
       </form>
 
       <ul>
-        {categorias.map(categoria => (
-          <li key={categoria.id}>{categoria.nome}</li>
+        {categorias.map((categoria) => (
+          <li key={categoria.id}>{categoria.titulo}</li>
         ))}
       </ul>
 

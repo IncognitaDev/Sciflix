@@ -6,6 +6,7 @@ export const BannerMainContainer = styled.section`
   background-image: ${({backgroundImage}) => `url(${backgroundImage})`};
   background-size: cover;
   background-position: center;
+  box-shadow:inset 2000px 0 0 0 rgba(0,0,0,0.9);
 
   @media(max-width: 800px){
     height: auto;
