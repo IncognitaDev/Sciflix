@@ -14,7 +14,20 @@ const URL_CATEGORIES = `${config.URL}/videos`;
     return resposta;
   });
 } 
+ function deleteVideo(videoObj) {
+  return fetch(`${URL_CATEGORIES}`, {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(videoObj)
+  }).then(async (response) => {
+    const resposta = await response.json();
+    return resposta;
+  });
+} 
 
 export default {
   create,
+  deleteVideo,
 }

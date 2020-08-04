@@ -12,3 +12,7 @@ export const FooterBase = styled.footer`
     margin-bottom: 50px;
   }
 `;
+
+export const Img = styled.img`
+  height: 50px;
+`

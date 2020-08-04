@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 import { FormFieldWrapper, Label, Input } from './styles';
 
-function FormField({ label, type, name, value, onChange, suggestions }) {
-  const isTypeTextArea = type === 'textarea';
+function FormField({ as, label, type, name, value, onChange, suggestions, onBlur}) {
   const fieldId = `id_${name}`;
   const hasSuggestions = Boolean(suggestions.length)
 
@@ -12,12 +11,13 @@ function FormField({ label, type, name, value, onChange, suggestions }) {
     <FormFieldWrapper>
       <Label htmlFor={fieldId}>
         <Input
-          as={isTypeTextArea ? 'textarea' : 'input'}
+          as={as}
           id={fieldId}
           type={type}
           value={value}
           name={name}
           onChange={onChange}
+          onBlur={onBlur}
           autoComplete={hasSuggestions ? 'off' : 'on'}
           list={hasSuggestions ? `suggestionFor_${fieldId}` : undefined}
         />

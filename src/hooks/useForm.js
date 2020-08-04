@@ -1,33 +1,46 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-function useForm(valoresIniciais, set, valueSet) {
-  const [values, setValues] = useState({ valoresIniciais });
-  
+function useForm({valoresIniciais, validate}) {
+  const [touched, setTouchedField] = useState({});
+  const [values, setValues] = useState(valoresIniciais);
+  const [errors, setErrors] = useState({});
 
-  function handleChange(key, value) {
+  function fieldTouch(e) {
+    const key = e.target.getAttribute('name');
+    setTouchedField({
+      ...touched,
+      [key]: true,
+    });
+  }
+
+  function validateValues() {
+    setErrors(validate(values));
+  }
+
+  function handleChange(e) {
+    const key = e.target.getAttribute('name');
+    const { value } = e.target;
     setValues({
       ...values,
       [key]: value,
     });
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function clearForm(e) {
+    e.preventDefault()
 
-    set([...valueSet, values]);
-    
-  }
-
-  function clearForm() {
-    setValues({valoresIniciais});
+    setValues({ valoresIniciais });
   }
 
   return {
     handleChange,
-    handleSubmit,
+    fieldTouch,
     clearForm,
+    validateValues,
     values,
+    errors,
+    touched,
   };
 }
 
-export default useForm
+export default useForm;

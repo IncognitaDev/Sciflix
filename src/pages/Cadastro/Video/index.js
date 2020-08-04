@@ -9,13 +9,30 @@ import useForm from '../../../hooks/useForm';
 
 function CadastroVideo() {
   const history = useHistory();
-  const { handleChange, values, clearForm } = useForm({
-    url: '',
-    titulo: '',
-    categoriaId: '',
-  });
   const[ categorias, setCategorias ] = useState([]);
   const categoryTitles = categorias.map(({ titulo }) => titulo) 
+  const form = useForm({
+    valoresIniciais: {
+      url: '',
+      titulo: '',
+      categoria: '',
+    }, 
+    validate (values) {
+      const error = {}
+
+      if(values.url === 1){
+          error.url = 'por favor insira um link';
+      }else if(!values.url.includes('.com' || '.app') || values.url.includes(' ') ){
+          error.url ='insira um link valido (links n podem incluir \' \' e devem conter \'.com\')';
+      }
+
+      if(!values.categoria){
+        error.categoria ='por favor insira um link';
+      }
+      
+      return error
+    }
+});
 
   useEffect(() => {
     categoriasRepository.getAll().then((response) => {
@@ -23,55 +40,69 @@ function CadastroVideo() {
     });
   }, []);
 
+  useEffect(()=> {
+    form.validateValues()
+
+  }, [form.values])
+
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    const categoriaId = categorias.find((categoria) => {
-      return categoria.titulo === values.categoriaId;
-    });
-
-    videosRepository
-      .create({
-        titulo: values.titulo,
-        url: values.url,
-        categoriaId: categoriaId.id,
-      })
-      .then(() => {
-        history.push('/');
+    console.log(form.errors)
+    if(form.errors === {}){
+      const categoriaId = categorias.find((categoria) => {
+        return categoria.titulo === form.values.categoriaId;
       });
+
+      videosRepository
+        .create({
+          titulo: form.values.titulo,
+          url: form.values.url,
+          categoriaId: categoriaId.id,
+        })
+        .then(() => {
+          history.push('/');
+        });
+    }
   }
 
   return (
     <PageDefault>
-      <h1>Cadastro de Video: {values.nome}</h1>
+      <h1>Cadastro de Video: {form.values.nome}</h1>
 
       <form onSubmit={(e) => handleSubmit(e)}>
         <FormField
-          value={values.titulo}
+          value={form.values.titulo}
           label="titulo"
           name="titulo"
           type="text"
-          onChange={(e) => handleChange('titulo', e.target.value)}
+          onChange={(e) => form.handleChange(e)}
         />
         <FormField
-          value={values.url}
+          value={form.values.url}
           label="url"
           name="url"
           type="text"
-          onChange={(e) => handleChange('url', e.target.value)}
+          onBlur={(e) => form.fieldTouch(e)}
+          onChange={(e) => form.handleChange(e)}
         />
+        {form.touched.url && form.errors.url && (<span>{form.errors.url}</span>)}
         <FormField
-          value={values.categoriaId}
+          as='select'
+          value={form.values.categoria}
           label="escolha uma categoria"
-          name="categoriaId"
-          type="text"
+          name="categoria"
+          type="select"
           suggestions={categoryTitles}
-          onChange={(e) => handleChange('categoriaId', e.target.value)}
+          onBlur={(e) => form.fieldTouch(e)}
+          onChange={(e) => form.handleChange(e)}
         />
+        {form.touched.categoria && form.errors.categoria && (<span>{form.errors.categoria}</span>)}
         <SubmitButton type="submit">Enviar</SubmitButton>
+        <ClearButton onClick={(e) => form.clearForm(e)}>Limpar</ClearButton>
       </form>
-      <ClearButton onClick={() => clearForm()}>Limpar</ClearButton>
+
 
       <Link to="/cadastro/categoria">Cadastrar Categoria</Link>
     </PageDefault>

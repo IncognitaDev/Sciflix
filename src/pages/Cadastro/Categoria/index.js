@@ -16,43 +16,51 @@ function CadastroCategoria() {
     });
   }, []);
 
-  const { handleChange, handleSubmit, clearForm, values } = useForm({
+  const form = useForm({ valoresIniciais: {
     nome: '',
     descricao: '',
     cor: '#000',
-  },
-    setCategorias,
-    categorias
-  );
+  }, 
+  validate (values){
+    const error = {}
+
+    if(!values.nome){
+      error.nome = 'insira um nome '
+    }
+    
+    return error
+  }
+
+});
 
   return (
     <PageDefault>
-      <h1>Cadastro de Categoria: {values.nome}</h1>
+      <h1>Cadastro de Categoria: {form.values.nome}</h1>
 
       <form onSubmit={(e) => handleSubmit(e)}>
         <FormField
-          value={values.nome}
+          value={form.values.nome}
           label="Nome da Categoria"
           name="nome"
           type="text"
-          onChange={(e) => handleChange('nome', e.target.value)}
+          onChange={(e) => form.handleChange(e)}
         />
         <FormField
-          value={values.descricao}
+          value={form.values.descricao}
           label="descricao"
           name="descricao"
           type="textarea"
-          onChange={(e) => handleChange('descricao', e.target.value)}
+          onChange={(e) => form.handleChange(e)}
         />
         <FormField
-          value={values.cor}
+          value={form.values.cor}
           label="cor"
           name="cor"
           type="color"
-          onChange={(e) => handleChange('cor', e.target.value)}
+          onChange={(e) => form.handleChange(e)}
         />
         <SubmitButton type="submit">Enviar</SubmitButton>
-        <ClearButton onClick={() => clearForm()}>Limpar</ClearButton>
+        <ClearButton onClick={(e) => form.clearForm(e)}>Limpar</ClearButton>
       </form>
 
       <ul>
