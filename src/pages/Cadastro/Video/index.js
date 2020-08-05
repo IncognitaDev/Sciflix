@@ -20,10 +20,14 @@ function CadastroVideo() {
     validate (values) {
       const error = {}
 
+      if(!values.title){
+        error.title = 'insira um titulo'
+      }
+
       if(values.url === 1){
-          error.url = 'por favor insira um link';
+        error.url = 'por favor insira um link';
       }else if(!values.url.includes('.com' || '.app') || values.url.includes(' ') ){
-          error.url ='insira um link valido (links n podem incluir \' \' e devem conter \'.com\')';
+        error.url ='insira um link valido (links n podem incluir \' \' e devem conter \'.com\')';
       }
 
       if(!values.categoria){
@@ -49,7 +53,6 @@ function CadastroVideo() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(form.errors)
     if(form.errors === {}){
       const categoriaId = categorias.find((categoria) => {
         return categoria.titulo === form.values.categoriaId;
@@ -99,8 +102,10 @@ function CadastroVideo() {
           onChange={(e) => form.handleChange(e)}
         />
         {form.touched.categoria && form.errors.categoria && (<span>{form.errors.categoria}</span>)}
-        <SubmitButton type="submit">Enviar</SubmitButton>
-        <ClearButton onClick={(e) => form.clearForm(e)}>Limpar</ClearButton>
+        <div style={{marginTop: "30px"}}>
+          <SubmitButton type="submit">Enviar</SubmitButton>
+          <ClearButton onClick={(e) => form.clearForm(e)}>Limpar</ClearButton>
+        </div>
       </form>
 
 
