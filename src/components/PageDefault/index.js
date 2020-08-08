@@ -13,6 +13,7 @@ const Main = styled.main`
   padding-bottom: 5%;
   padding-left: 5%;
   padding-right: 5%;
+  text-align: center;
 
   ${({ paddingAll }) =>
     css`
@@ -30,13 +31,13 @@ function PageDefault({ children, paddingAll }) {
     </>
   );
 }
-PageDefault.defaultProps ={
-  paddingAll: false
-}
+PageDefault.defaultProps = {
+  paddingAll: false,
+};
 
 PageDefault.propTypes = {
   children: PropTypes.node.isRequired,
-  paddingAll: PropTypes.string
+  paddingAll: PropTypes.string,
 };
 
 export default PageDefault;

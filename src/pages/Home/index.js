@@ -2,24 +2,37 @@ import React, { useState, useEffect } from 'react';
 
 import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
-import categoriasRepositories  from '../../repositories/categorias';
+import categoriasRepositories from '../../repositories/categorias';
 import PageDefault from '../../components/PageDefault';
 
 function Home() {
   const [dadosIniciais, setDadosIniciais] = useState([]);
-
+  const [load, setLoad] = useState('');
   useEffect(() => {
-  categoriasRepositories.getAllWithVideos()
-      .then((response) => { 
-        console.log(response)
-        setDadosIniciais(response)})
+    categoriasRepositories
+      .getAllWithVideos()
+      .then((response) => {
+        setDadosIniciais(response);
+      })
       .catch((err) => {
-        alert(err.message);
+        console.log(err.message);
       });
   }, []);
 
+  function loadFunction() {
+    const loop = true;
+    while (loop) {
+      if (load === '...') {
+        setLoad('');
+      } else {
+        setLoad(`${load}.`);
+      }
+    }
+  }
+
   return (
     <PageDefault paddingAll={0}>
+      {dadosIniciais.length < 1 && loadFunction() && <h1>Loading{load}</h1>}
       {dadosIniciais.length >= 1 && (
         <>
           <BannerMain
